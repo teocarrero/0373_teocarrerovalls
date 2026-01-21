@@ -1,0 +1,627 @@
+/* 
+   VARIABLES CSS
+    */
+:root {
+    --color-background: #f5f5f4;
+    --color-text: #332;
+    --color-accent: #2390ff;
+    --color-border: #ddd;
+    --color-white: #ffffffec;
+    --color-blau-clar: #e3f2fd;
+    --color-blau-fosc: #1a73cc;
+}
+
+/* 
+   RESET BÀSIC
+   */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+
+
+
+/* 
+   HEADER
+    */
+header {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 4.2rem 2rem;
+    text-align: left;
+    animation: fadeIn 0.8s ease;
+
+
+
+}
+
+
+.profile-photo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 5px solid var(--color-white);
+    margin-bottom: 1.6rem;
+    object-fit: cover;
+    animation: fadeIn 1s ease 0.3s both;
+
+
+}
+
+header h1 {
+    font-size: 3.1rem;
+    margin-bottom: 0.6rem;
+    font-weight: 700;
+    animation: fadeIn 1s ease 0.5s both;
+
+
+}
+
+.header-content {
+
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 1rem;
+max-width: 1220px;
+margin: 0 auto;
+animation: fadeIn 1s ease 0.9s both;
+
+
+
+
+
+
+}
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    margin-top: 1.5rem;
+    margin-left: 10%;
+    animation: fadeIn 1s ease 0.9s both;
+
+}
+
+.contact-info a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+
+/* 
+   NAVEGACIÓ
+    */
+nav {
+    background-color: white;
+    border-bottom: 2px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 10; /*z-index significa quina part esta per sobre que una altre */  
+    border-bottom: 3px solid var(--color-blau-fosc);
+    
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; 
+    padding: 0;
+    gap: 3.3rem;  
+    
+}
+
+nav a {
+color: var(--color-text);
+    text-decoration: none;
+padding: 1.2rem 2.8rem; 
+display: block;
+ text-align: center;
+ font-weight: 750;
+    transition: 0.3s ease;
+     
+
+}
+
+
+nav a::after {
+content: '';
+position: absolute;
+left: 50%;
+bottom: 0.2px;
+height: 2px;
+width: 0;
+background-color: var(--color-blau-fosc);
+transition: all 2s ease;
+transform: translateX(-50%);
+
+}
+
+nav a:hover::after {
+width: 100%;
+}
+
+
+nav a:hover {
+background-color: var(--color-blau-clar);
+    color: var(--color-blau-fosc);
+}
+
+
+/* TODO: Afegeix efectes hover i focus a la navegació */
+/* TODO: Assegura't que el focus sigui visible amb teclat */
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+main {
+max-width: 1260px;
+margin: 0 auto;
+padding: 2rem 1rem;
+text-align: justify;
+}
+
+h3 {
+
+font-size: 1.3rem;
+
+}
+
+section {
+background-color: var(--color-white);
+padding: 2rem;
+margin-bottom: 2rem;
+border-radius: 8px;
+    scroll-margin-top: 5rem;
+    
+    
+}
+
+section h2 {
+margin-top: 1.2rem;
+ color: #1976d2;
+ font-size: 2.5em;
+  margin-bottom: 2.1rem;
+ border-bottom: 2px solid var(--color-accent);
+padding-bottom: 1rem;
+    
+    
+
+}
+
+
+/* TODO: Afegeix un pseudo-element (::after) al h2 */
+/* Exemple: una línia decorativa de color diferent */
+
+section h3 {
+color: var(--color-text);
+    margin-bottom: 0.5rem;
+
+
+}
+
+
+#sobre-mi p{
+ font-size: 1.05rem;
+ line-height: 1.8;
+text-align:justify;
+    margin-bottom: 1.5rem;
+}
+
+
+/* ============================================
+   FORMACIÓ (TIMELINE)
+   ============================================ */
+.formacio-item {
+
+margin-bottom: 1.5rem;
+ padding-left: 1rem;
+ background-color: var(--color-background);
+padding: 1.5rem;
+margin-bottom: 1rem;
+ border-radius: 1rem;
+    transition: all 0.3s ease;
+border-left: 4px solid var(--color-accent);
+
+
+
+
+}
+
+.formacio-item:hover {
+
+transform: translateX(8px);
+ box-shadow: 2px 3px 3px rgb(183, 182, 182);
+
+}
+.experiencia-item {
+margin-bottom: 1.5rem;
+padding-left: 1rem;
+background-color: var(--color-background);
+padding: 1.5rem;
+margin-bottom: 1rem;
+ border-radius: 10px;
+transition: all 0.3s ease;
+ border-left: 4px solid var(--color-accent);
+
+    
+
+}
+.experiencia-item:hover {
+
+transform: translateX(8px);
+box-shadow: 2px 3px 3px rgb(183, 182, 182);
+
+}
+
+/* TODO: Crea una timeline visual amb pseudo-elements */
+/* Pots usar ::before per fer els cercles i una línia vertical */
+
+.period {
+color: var(--color-accent);
+ font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+/* ============================================
+   HABILITATS
+   ============================================ */
+#habilitats {
+ display:grid;
+ grid-template-columns: 1fr 1fr;
+gap: 1.5rem;
+    }
+      
+
+#habilitats h2 {
+grid-column: 1 / -1;
+    }
+
+
+#habilitats h3 {
+ color: var(--color-accent) ;
+
+
+}
+ 
+.skill-category {
+    margin-bottom: 2rem;
+}
+
+.skills-list {
+    list-style: none;
+}
+
+.skills-list li {
+    background-color: var(--color-background);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease; 
+    border-left: 4px solid transparent;  
+        
+
+}
+
+
+
+
+.skills-list.technical li:hover {
+    
+    transform: translateX(8px);
+    box-shadow: 2px 3px 3px rgb(183, 182, 182);
+    background-color: rgba(143, 211, 253, 0.601) ;
+    border-left-color: var(--color-accent);
+
+}
+
+.skills-list.soft li:hover {
+    
+    transform: translateX(8px);
+    box-shadow: 2px 3px 3px rgb(183, 182, 182);
+    background-color: rgba(167, 241, 193, 0.601) ;
+    border-left-color: rgba(119, 253, 119, 0.83);
+
+}
+
+
+
+/* TODO: Afegeix efectes hover a les habilitats */
+
+/* ============================================
+   PROJECTES
+   ============================================ */
+.project-card {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    transition: all 0.5s ease;
+    outline: 3px solid transparent; 
+ 
+ 
+
+}
+
+.project-card:hover  {
+    transform: scale(1.005);
+    box-shadow: 2px 3px 3px rgb(183, 182, 182);
+    outline: 3px solid var(--color-accent);
+
+
+}
+/* TODO: Afegeix efecte hover al project-card (transform, box-shadow) */
+
+.project-badge {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 2rem 0;
+}
+
+.tech-tag {
+    background-color: var(--color-background);
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+        transition: all 0.2s ease;        
+
+}
+
+.tech-tag:hover {
+
+     transform: scale(8px);
+ background-color:var(--color-accent);
+ color: white;
+ 
+
+
+}
+
+.project-link {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+/* TODO: Afegeix efectes hover als enllaços dels projectes */
+
+/* ============================================
+   IDIOMES
+   ============================================ */
+.language-card {
+
+    background-color: var(--color-background);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    transition: all 0.5s ease;  
+        outline: 1px solid transparent; 
+      
+
+}
+
+.language-card:hover  {
+    transform: scale(1.005);
+    box-shadow: 2px 3px 3px rgb(183, 182, 182);
+        outline: 1px solid var(--color-accent);
+
+    
+
+}
+
+#idiomes  {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+#idiomes h2  {
+
+    grid-column: span 3; /*span significa que ocupa 3 columnes */
+
+
+}
+
+/* ============================================
+   HOBBIES (ASIDE)
+   ============================================ */
+aside {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: 8px;
+
+   
+}
+aside li:hover {
+     background-color: var(--color-accent) ;
+    transform: scale(1.04);
+    box-shadow: 2px 3px 3px rgb(183, 182, 182);
+    color: white;
+   
+}
+
+
+
+aside ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    
+   
+
+}
+
+aside li {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: var(--color-background);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s ease;        
+
+
+}
+
+
+
+aside h2 {
+color: var(--color-accent);
+font-size: 1.5em;
+margin-bottom: 1.5rem;
+padding-bottom: 0.5rem;
+ grid-column: span 3; /*span significa que ocupa 3 columnes */
+text-align: center;
+
+}
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+}
+
+
+
+/* ============================================
+   FOCUS VISIBLE (ACCESSIBILITAT)
+   ============================================ */
+/* TODO: Assegura't que tots els enllaços tinguin focus visible */
+/* Exemple: a:focus { outline: 2px solid var(--color-accent); } */
+
+/* 
+   RESPONSIVE - TABLET 
+ */
+/* RESPONSIVE - MÒBIL */
+@media (max-width: 767px) {
+    /* Header */
+header {
+padding: 2rem 1rem;
+    }
+    
+header h1 {
+font-size: 2rem;
+    }
+    
+.profile-photo {
+width: 120px;
+height: 120px;
+    }
+    
+.contact-info {
+margin-left: 0;
+gap: 1rem;
+    }
+    
+nav ul {
+flex-direction: column;
+gap: 0;
+    }
+nav a {
+padding: 1rem;
+    }
+    
+#habilitats {
+grid-template-columns: 1fr;
+    }
+    
+#idiomes {
+        grid-template-columns: 1fr;
+    }
+    
+#idiomes h2 {
+        grid-column: span 1;
+    }
+    
+ aside ul {
+grid-template-columns: 1fr;
+    }
+    
+aside h2 {
+grid-column: span 1;
+    }
+}
+/* 
+   RESPONSIVE - DESKTOP (min-width: 1024px)
+ */
+@media (min-width: 1024px) {
+    header h1 {
+        font-size: 3rem;
+    }
+    
+    /* TODO: Ajusta elements per desktop */
+    /* Pots usar CSS Grid per layout de múltiples columnes */
+}
+
+/* ============================================
+   MODE IMPRÈS (OBLIGATORI)
+   ============================================ */
+
+   @media print {
+    body {
+        background-color: white ;
+        color: black;
+    }
+    
+    nav {
+        display: none;
+    }
+    
+    section {
+        page-break-inside: avoid;
+        box-shadow: none;
+        border: 2px solid white;
+    }
+
+}
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 20;
+        transform: translateY(0);
+    }
+}
+
+
+    
+    /* TODO: Mostra les URLs dels enllaços amb pseudo-elements */
+    /* Hint: a[href]::after { content: " (" attr(href) ")"; } */
+    
+    /* TODO: Ajusta colors i estilos per impressió */
