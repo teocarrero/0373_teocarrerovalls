@@ -59,6 +59,19 @@ header {
 
 }
 
+ @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 20;
+        transform: translateY(0);
+
+    }
+
+}
+
 header h1 {
     font-size: 3.1rem;
     margin-bottom: 0.6rem;
@@ -136,8 +149,8 @@ display: block;
 
 }
 
-
 nav a::after {
+position: relative;
 content: '';
 position: absolute;
 left: 50%;
@@ -154,10 +167,15 @@ nav a:hover::after {
 width: 100%;
 }
 
-
+nav a:focus-visible,
 nav a:hover {
 background-color: var(--color-blau-clar);
     color: var(--color-blau-fosc);
+}
+
+a:focus-visible {
+    outline: 2px solid black;
+    border-radius: 3px;
 }
 
 
@@ -324,7 +342,7 @@ grid-column: 1 / -1;
     transform: translateX(8px);
     box-shadow: 2px 3px 3px rgb(183, 182, 182);
     background-color: rgba(143, 211, 253, 0.601) ;
-    border-left-color: var(--color-accent);
+    border-left-color: rgb(146, 215, 250);
 
 }
 
@@ -388,7 +406,7 @@ grid-column: 1 / -1;
     padding: 0.4rem 0.8rem;
     border-radius: 5px;
     font-size: 0.9rem;
-        transition: all 0.2s ease;        
+    transition: all 0.2s ease;  
 
 }
 
@@ -553,7 +571,8 @@ flex-direction: column;
 gap: 0;
     }
 nav a {
-padding: 1rem;
+padding: 0.5rem 1rem; /* reduce espacio vertical y horizontal */
+        font-size: 0.9rem;    
     }
     
 #habilitats {
@@ -592,36 +611,192 @@ grid-column: span 1;
    MODE IMPRÈS (OBLIGATORI)
    ============================================ */
 
-   @media print {
+  @media print {
+    @page {
+        margin: 0.35cm;
+        size: A4;
+    }
+
+    /* ===== BASE ===== */
     body {
-        background-color: white ;
-        color: black;
+    background: white;
+    color: black;
+    font-size: 6.5pt;
+    line-height: 1.05;
     }
-    
+
     nav {
-        display: none;
+    display: none;
     }
-    
+    header {
+    padding: 0.1rem;
+    text-align: center;
+    }
+
+    header h1 {
+    font-size: 1rem;
+    margin: 0;
+    }
+
+   
+
+    .contact-info {
+    font-size: 5.8pt;
+    gap: 0.05rem;
+    margin: 0.05rem 0;
+    }
+
+    main {
+    padding: 0;
+    }
+
     section {
-        page-break-inside: avoid;
-        box-shadow: none;
-        border: 2px solid white;
+    padding: 0.15rem;
+    margin-bottom: 0.12rem;
+    border: none;
+    background: white;
+    page-break-inside: avoid;
     }
 
+    section h2 {
+    font-size: 0.75rem;
+    margin: 0.05rem 0;
+    padding-bottom: 0.03rem;
+     border-bottom: 0.5px solid #000;
+    }
+
+    section h3 {
+    font-size: 0.65rem;
+    margin-bottom: 0.02rem;
+    }
+
+    #sobre-mi p {
+    font-size: 6pt;
+    line-height: 1.05;
+    margin-bottom: 0.05rem;
+    }
+
+    .formacio-item,
+    .experiencia-item {
+    padding: 0.1rem;
+    margin-bottom: 0.08rem;
+    border-left: 0.8px solid #000;
+    background: white;
+    }
+
+    .period {
+    font-size: 5.5pt;
+    line-height: 1;
+    margin: 0;
+    }
+
+    #habilitats {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.1rem;
+    }
+
+    .skill-category {
+    margin-bottom: 0.1rem;
+    }
+
+    .skills-list li {
+    padding: 0.1rem;
+    margin-bottom: 0.05rem;
+    font-size: 5.8pt;
+    border-left: 0.8px solid #000;
+    background: white;
+    }
+
+    #projectes {
+    display: block;
+    }
+
+    .project-card {
+    padding: 0.08rem;
+    margin-bottom: 0.08rem;
+    border: 0.5px solid #000;
+    font-size: 5.8pt;
+    page-break-inside: avoid;
+    }
+
+    .project-card h3 {
+    font-size: 6.2pt;
+    margin: 0;
+    }
+
+    .project-badge {
+    font-size: 5pt;
+    padding: 0.02rem 0.2rem;
+    margin: 0;
+    }
+
+    .project-tech {
+    gap: 0.05rem;
+    margin: 0.02rem 0;
+    }
+
+    .tech-tag {
+    font-size: 5pt;
+     padding: 0.02rem 0.15rem;
+    border: 0.5px solid #000;
+    background: white;
+    }
+
+    .project-link {
+    font-size: 5pt;
+     padding: 0;
+    margin: 0;
+    background: none;
+    color: black;
+    text-decoration: underline;
+    }
+    #idiomes {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.1rem;
+    }
+    .language-card {
+    padding: 0.1rem;
+    margin-bottom: 0.05rem;
+    font-size: 5.8pt;
+    background: white;
+    }
+
+    aside {
+    padding: 0.1rem;
+    }
+
+    aside h2 {
+    font-size: 0.75rem;
+    margin-bottom: 0.05rem;
+    }
+
+    aside ul {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.1rem;
+    }
+
+    aside li {
+    padding: 0.1rem;
+    font-size: 5.8pt;
+    }
+
+    footer {
+    padding: 0.1rem;
+    font-size: 5.5pt;
+    }
+
+    a[href]::after {
+     content: "";
+    }
+
+    h2, h3 {
+    page-break-after: avoid;
+    }
 }
-  @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 20;
-        transform: translateY(0);
-    }
-}
 
 
-    
+
+
     /* TODO: Mostra les URLs dels enllaços amb pseudo-elements */
     /* Hint: a[href]::after { content: " (" attr(href) ")"; } */
     
