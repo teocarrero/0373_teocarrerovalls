@@ -179,9 +179,6 @@ a:focus-visible {
 }
 
 
-/* TODO: Afegeix efectes hover i focus a la navegació */
-/* TODO: Assegura't que el focus sigui visible amb teclat */
-
 /* ============================================
    MAIN CONTENT
    ============================================ */
@@ -221,8 +218,6 @@ padding-bottom: 1rem;
 }
 
 
-/* TODO: Afegeix un pseudo-element (::after) al h2 */
-/* Exemple: una línia decorativa de color diferent */
 
 section h3 {
 color: var(--color-text);
@@ -539,8 +534,7 @@ footer {
 /* ============================================
    FOCUS VISIBLE (ACCESSIBILITAT)
    ============================================ */
-/* TODO: Assegura't que tots els enllaços tinguin focus visible */
-/* Exemple: a:focus { outline: 2px solid var(--color-accent); } */
+
 
 /* 
    RESPONSIVE - TABLET 
@@ -603,8 +597,7 @@ grid-column: span 1;
         font-size: 3rem;
     }
     
-    /* TODO: Ajusta elements per desktop */
-    /* Pots usar CSS Grid per layout de múltiples columnes */
+    
 }
 
 /* ============================================
@@ -797,7 +790,3 @@ grid-column: span 1;
 
 
 
-    /* TODO: Mostra les URLs dels enllaços amb pseudo-elements */
-    /* Hint: a[href]::after { content: " (" attr(href) ")"; } */
-    
-    /* TODO: Ajusta colors i estilos per impressió */
